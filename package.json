@@ -1,0 +1,43 @@
+{
+  "name": "type-checking-MDX-in-storybook",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "lint": "eslint './src/**/*.{ts,tsx}' --format codeframe --color"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
+    "@types/jest": "25.1.4",
+    "@types/node": "13.9.3",
+    "@types/react": "16.9.25",
+    "@types/react-dom": "16.9.5",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "prettier": "^2.0.2",
+    "react-app-rewired": "2.1.5",
+    "react-hot-loader": "^4.12.20",
+    "typescript": "3.8.3"
+  }
+}
