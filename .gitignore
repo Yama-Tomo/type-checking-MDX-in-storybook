@@ -11,6 +11,9 @@
 /coverage
 /junit.xml
 
+# storybook
+/storybook-static/
+
 # production
 /build
 

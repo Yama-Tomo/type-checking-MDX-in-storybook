@@ -13,7 +13,9 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{ts,tsx}' --format codeframe --color"
+    "lint": "eslint './src/**/*.{ts,tsx}' --format codeframe --color",
+    "sb": "start-storybook -p 9009 -s public",
+    "sb:build": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -29,6 +31,11 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
+    "@storybook/addon-docs": "next",
+    "@storybook/addons": "next",
+    "@storybook/cli": "next",
+    "@storybook/preset-create-react-app": "^2.1.0",
+    "@storybook/react": "next",
     "@types/jest": "25.1.4",
     "@types/node": "13.9.3",
     "@types/react": "16.9.25",
