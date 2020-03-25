@@ -1,4 +1,5 @@
 const path = require('path')
+const displayErrorOnDevPlugin = require('./webpack/display_error_on_dev_plugin')
 
 module.exports = {
   stories: ['../src/stories/**/*.stories.(tsx|mdx)'],
@@ -12,7 +13,15 @@ module.exports = {
     }
   ],
   webpackFinal: (config, { configType }) => {
+    const isDev = configType === 'DEVELOPMENT'
+
     config.resolve.alias['~'] = path.resolve('./src')
+
+    if (isDev) {
+      config.plugins.push(
+        displayErrorOnDevPlugin()
+      )
+    }
 
     return config
   },
