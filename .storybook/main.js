@@ -2,6 +2,8 @@ const path = require('path')
 const displayErrorOnDevPlugin = require('./webpack/display_error_on_dev_plugin')
 const typeCheckingMdx = require('./webpack/type_checking_mdx')
 
+process.env.EXTEND_ESLINT = 'false'
+
 module.exports = {
   stories: ['../src/stories/**/*.stories.(tsx|mdx)'],
   addons: [
