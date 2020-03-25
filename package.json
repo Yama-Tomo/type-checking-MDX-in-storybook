@@ -15,8 +15,8 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}' --format codeframe --color",
-    "sb": "start-storybook -p 9009 -s public",
-    "sb:build": "build-storybook -s public"
+    "sb": "yarn build:mdx-loader && start-storybook -p 9009 -s public",
+    "sb:build": "yarn build:mdx-loader && build-storybook -s public"
   },
   "browserslist": {
     "production": [
