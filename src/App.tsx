@@ -1,6 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import HelloWorld from '~/components/HelloWorld';
 
-const App: React.FC = () => <HelloWorld />;
+/* -------------------- DOM -------------------- */
+const UiComponent: React.FCX = (props) => (
+  <main {...props}>
+    <HelloWorld />
+  </main>
+);
 
-export default App;
+/* ------------------- Style ------------------- */
+const StyledUiComponent: React.FCX = styled(UiComponent)`
+  margin: 1rem;
+`;
+
+/*---------------------------------------------- */
+export default StyledUiComponent;
