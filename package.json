@@ -11,6 +11,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "build:mdx-loader": "tsc -p tsconfig.mdx-to-tsx-loader.json",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}' --format codeframe --color",

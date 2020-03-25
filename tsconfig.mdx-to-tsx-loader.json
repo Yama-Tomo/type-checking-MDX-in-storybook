@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./.storybook/webpack",
+    "noEmit": false
+  },
+  "include": [
+    ".storybook/webpack/mdx_to_tsx_loader.ts"
+  ],
+  "exclude": []
+}

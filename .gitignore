@@ -13,6 +13,7 @@
 
 # storybook
 /storybook-static/
+/.storybook/webpack/mdx_to_tsx_loader.js
 
 # production
 /build
