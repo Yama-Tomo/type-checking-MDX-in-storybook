@@ -1,0 +1,41 @@
+import { Source, Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import HelloWorld from '~/components/HelloWorld';
+
+<Meta title="example/HelloWorld" />
+
+# welcome to storybook
+
+<Source code={`import HelloWorld from '~/components/HelloWorld'`} />
+
+<Preview>
+  <Story name="Default">
+    <HelloWorld />
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={HelloWorld} />
+
+# stories
+
+## size
+<Preview>
+  <Story name="small">
+    <HelloWorld size="small" />
+  </Story>
+  <Story name="medium">
+    <HelloWorld size="medium" />
+  </Story>
+  <Story name="large">
+    <HelloWorld size="large" />
+  </Story>
+</Preview>
+
+## color
+<Preview>
+  <Story name="color:#ff0000">
+    <HelloWorld color="#ff0000" />
+  </Story>
+</Preview>
+
