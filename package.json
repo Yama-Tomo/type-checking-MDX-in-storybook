@@ -33,6 +33,8 @@
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "@storybook/addon-docs": "next",
+    "@storybook/addon-storyshots": "next",
+    "@storybook/addon-storyshots-puppeteer": "next",
     "@storybook/addons": "next",
     "@storybook/cli": "next",
     "@storybook/preset-create-react-app": "^2.1.0",
@@ -46,8 +48,10 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^2.0.2",
+    "puppeteer": "^2.1.1",
     "react-app-rewired": "2.1.5",
     "react-hot-loader": "^4.12.20",
+    "react-test-renderer": "^16.13.1",
     "typescript": "3.8.3"
   }
 }

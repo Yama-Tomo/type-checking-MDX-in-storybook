@@ -13,5 +13,11 @@ module.exports = {
     config.resolve.alias['~'] = path.resolve('./src')
 
     return config
+  },
+  jest: function (config) {
+    config.moduleNameMapper['^~/(.*)$'] = '<rootDir>/src/$1'
+    config.transform = { '^.+\\.mdx$': './.storybook/jest-transform-mdx.js', ...config.transform }
+
+    return config
   }
 }
