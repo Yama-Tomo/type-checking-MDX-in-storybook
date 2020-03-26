@@ -22,7 +22,7 @@ module.exports = {
 
     if (isDev) {
       config.plugins.push(
-        displayErrorOnDevPlugin()
+        displayErrorOnDevPlugin({ formatter: typeCheckingMdx.stripTsxFilenameFormatter })
       )
     }
 

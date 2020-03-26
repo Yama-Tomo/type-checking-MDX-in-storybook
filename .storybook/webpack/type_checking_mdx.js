@@ -2,6 +2,7 @@ const rimraf = require('rimraf')
 const fs = require('fs')
 const path = require('path')
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin')
+const displayErrorOnDevPlugin = require('./display_error_on_dev_plugin')
 
 const delayTypeCheckingPlugin = function (options /*: { delay?: number } */) {
   return function () {
@@ -13,6 +14,9 @@ const delayTypeCheckingPlugin = function (options /*: { delay?: number } */) {
     )
   }
 }
+
+const stripTsxFilenameFormatter = (message) =>
+  displayErrorOnDevPlugin.formatter(message).replace(/(.*)\.storybook\/\.mdx_to_tsx\/(.*?)\.tsx/g, '$1$2')
 
 module.exports = function (webpackConfig, options /*: { delay?: number } */) {
   if (fs.existsSync('.storybook/.mdx_to_tsx')) {
@@ -42,9 +46,15 @@ module.exports = function (webpackConfig, options /*: { delay?: number } */) {
   currentOptions.reportFiles = ['.storybook/.mdx_to_tsx/**/*.tsx', ...currentOptions.reportFiles]
   currentOptions.tsconfig = './tsconfig.storybook.json'
 
+  if (!options.isDev) {
+    currentOptions.formatter = (message) => stripTsxFilenameFormatter(message)
+  }
+
   // replace new `ForkTsCheckerWebpackPlugin` instance
   webpackConfig.plugins = webpackConfig.plugins.filter(p => p.constructor.name !== 'ForkTsCheckerWebpackPlugin')
     .concat(new ForkTsCheckerWebpackPlugin(currentOptions))
 
   webpackConfig.plugins.push(delayTypeCheckingPlugin(options))
 }
+
+module.exports.stripTsxFilenameFormatter = stripTsxFilenameFormatter
