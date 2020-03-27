@@ -1,0 +1,32 @@
+name: Main workflow
+on: [push]
+jobs:
+  setup:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+      - uses: actions/cache@v1.0.3
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            node_modules-
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install
+        run: yarn
+      - name: lint
+        run: yarn lint --max-warnings=0
+      - name: build storybook
+        run: yarn sb:build --quiet
+      - name: test
+        run: CI=true yarn test -u
+      - name: type check test
+        run: |
+          sed -i -e 's/size="small"/size=\{123\}/g' src/stories/HelloWorld.stories.mdx
+          yarn sb:build --quiet
+          [ $? -ne 0 ] && exit 0 || exit 1
+        shell: sh {0}
+
