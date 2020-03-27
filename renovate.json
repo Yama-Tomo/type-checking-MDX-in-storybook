@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "rangeStrategy": "bump",
+  "timezone": "Asia/Tokyo",
+  "labels": ["renovate"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 11am on the first day of the month"
+    ]
+  }
+}
