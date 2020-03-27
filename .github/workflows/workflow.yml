@@ -1,7 +1,7 @@
 name: Main workflow
 on: [push]
 jobs:
-  setup:
+  test:
     name: test
     runs-on: ubuntu-latest
     steps:
@@ -15,18 +15,46 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ap-northeast-1
       - name: install
         run: yarn
       - name: lint
         run: yarn lint --max-warnings=0
       - name: build storybook
         run: yarn sb:build --quiet
+      - name: download snapshot
+        if: github.ref != 'refs/heads/master'
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        run: |
+          aws s3 sync s3://${AWS_S3_BUCKET} src/__tests__/stories/__image_snapshots__/ --delete
       - name: test
-        run: CI=true yarn test -u
+        run: |
+          if [ "${GITHUB_REF}" = "refs/heads/master" ]; then
+            opts="-u"
+          fi
+          CI=true yarn test ${opts}
       - name: type check test
         run: |
           sed -i -e 's/size="small"/size=\{123\}/g' src/stories/HelloWorld.stories.mdx
           yarn sb:build --quiet
           [ $? -ne 0 ] && exit 0 || exit 1
         shell: sh {0}
+
+  save-artifact:
+    name: save artifact
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: upload snapshot
+        if: github.ref == 'refs/heads/master'
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        run: |
+          aws s3 sync src/__tests__/stories/__image_snapshots__/ s3://${AWS_S3_BUCKET} --delete
 
