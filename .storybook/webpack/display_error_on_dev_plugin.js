@@ -1,9 +1,12 @@
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin')
+const clearConsole = require('react-dev-utils/clearConsole')
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
 const chalk = require('chalk')
 
 const formatter = (message) => `${message.file}\n${typescriptFormatter(message, true)}`
+
+const isInteractive = process.stdout.isTTY;
 
 // reference `react-dev-utils/WebpackDevServerUtils.js`
 module.exports = function(options) {
@@ -34,9 +37,21 @@ module.exports = function(options) {
 
       const messages = formatWebpackMessages(statsData)
 
-      if (messages.errors.length > 0) {
+      if (isInteractive && (messages.errors.length || messages.warnings.length)) {  
+        clearConsole()
+      }
+
+      if (messages.errors.length) {
         console.log(chalk.red('Failed to compile.\n'))
         console.log(messages.errors.join('\n\n'))
+      }
+
+      if (messages.warnings.length) {
+        if (messages.errors.length) {
+          console.log('')
+        }
+        console.log(chalk.yellow('Compiled with warnings.\n'))
+        console.log(messages.warnings.join('\n\n'))
       }
     })
 
