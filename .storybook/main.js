@@ -2,6 +2,8 @@ const path = require('path')
 const displayErrorOnDevPlugin = require('./webpack/display_error_on_dev_plugin')
 const typeCheckingMdx = require('./webpack/type_checking_mdx')
 
+let alreadySetup = false;
+
 module.exports = {
   stories: ['../src/stories/**/*.stories.(tsx|mdx)'],
   addons: [
@@ -14,6 +16,13 @@ module.exports = {
     }
   ],
   webpackFinal: (config, { configType }) => {
+    // workaround: since going from A to B, this has been changed to being called multiple times.
+    // TODO: remove workaround
+    if (alreadySetup) {
+      return config
+    }
+    alreadySetup = true
+
     const isDev = configType === 'DEVELOPMENT'
 
     config.resolve.alias['~'] = path.resolve('./src')
