@@ -34,7 +34,7 @@
     "@hot-loader/react-dom": "^16.13.0",
     "@storybook/addon-docs": "^6.0.0-alpha.45",
     "@storybook/addon-storyshots": "^6.0.0-alpha.45",
-    "@storybook/addon-storyshots-puppeteer": "^6.0.0-alpha.45",
+    "@storybook/addon-storyshots-puppeteer": "^6.0.0-alpha.46",
     "@storybook/addons": "^6.0.0-alpha.45",
     "@storybook/cli": "^6.0.0-alpha.45",
     "@storybook/preset-create-react-app": "^2.1.1",
