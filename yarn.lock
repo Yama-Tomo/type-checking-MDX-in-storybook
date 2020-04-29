@@ -1549,13 +1549,13 @@
     vue-docgen-api "^4.7.0"
     vue-docgen-loader "^1.4.0"
 
-"@storybook/addon-storyshots-puppeteer@^6.0.0-alpha.45":
-  version "6.0.0-alpha.45"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots-puppeteer/-/addon-storyshots-puppeteer-6.0.0-alpha.45.tgz#9174e75db3a019ae9f92af9a89c1a347098e621c"
-  integrity sha512-Qjyaj/Gmgg8cWZsyXC9WVPUYbwT81P8wHhrN/FZ8icl94atFEDGeU4E2ohz+aGQeMbgHge8We3dLQciMVN4qfQ==
+"@storybook/addon-storyshots-puppeteer@^6.0.0-alpha.46":
+  version "6.0.0-alpha.46"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots-puppeteer/-/addon-storyshots-puppeteer-6.0.0-alpha.46.tgz#d5b36a9b2d3152fb711de80c6f661888aa7458bb"
+  integrity sha512-ubIGPs0YwmTV4Ns6iVQeSGQ1PQfBeV24LyuxHA2/u3hCAsDvTMB8c/uzLLmQF9Ootk+io77+PDEaHXXnkQ/7qw==
   dependencies:
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.0.0-alpha.45"
+    "@storybook/node-logger" "6.0.0-alpha.46"
     "@types/jest-image-snapshot" "^2.8.0"
     "@wordpress/jest-puppeteer-axe" "^1.5.0"
     core-js "^3.0.1"
@@ -1859,6 +1859,17 @@
   version "6.0.0-alpha.45"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.0.0-alpha.45.tgz#928e908a6e0e3579bd276504309dc73fa48b6efa"
   integrity sha512-mwBVMJ2xFoZY3JIqbhEihs5DGdfY24u0AmOn83Yxuvrrkdc9iQxf0GXnpi+3PJwrNRXoL16g1hCe5Pq8MyA7aA==
+  dependencies:
+    "@types/npmlog" "^4.1.2"
+    chalk "^3.0.0"
+    core-js "^3.0.1"
+    npmlog "^4.1.2"
+    pretty-hrtime "^1.0.3"
+
+"@storybook/node-logger@6.0.0-alpha.46":
+  version "6.0.0-alpha.46"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.0.0-alpha.46.tgz#27c3b4e9fb568cf219f073729a7b9e391f50218d"
+  integrity sha512-DG9nNDzyDCxEwAfT+IpCgZqO5eBRusTiVTJqR0LV5wJ2zqmPaOQ5qeizLetxq8JKVTo2BakL+xF33nEesHWERA==
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^3.0.0"
