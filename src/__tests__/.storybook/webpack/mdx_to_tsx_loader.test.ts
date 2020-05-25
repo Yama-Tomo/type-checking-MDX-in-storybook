@@ -19,7 +19,7 @@ const makeShortcode = name => function MDXDefaultShortcode(props) {
 };
 
 const layoutProps = {
-
+  
 };
 const MDXLayout = "wrapper"
 function MDXContent({
@@ -74,39 +74,34 @@ function MDXContent({
 MDXContent.isMDXComponent = true;
 
 export const defaultStory = () => (
-        <HelloWorld />
-      );
-defaultStory.story = {};
-defaultStory.story.name = 'Default';
-defaultStory.story.parameters = { storySource: { source: '<HelloWorld />' } };
+          <HelloWorld />
+        );
+defaultStory.storyName = 'Default';
+defaultStory.parameters = { storySource: { source: '<HelloWorld />' } };
 
 export const small = () => (
-        <HelloWorld size="small" />
-      );
-small.story = {};
-small.story.name = 'small';
-small.story.parameters = { storySource: { source: '<HelloWorld size="small" />' } };
+          <HelloWorld size="small" />
+        );
+small.storyName = 'small';
+small.parameters = { storySource: { source: '<HelloWorld size=\"small\" />' } };
 
 export const medium = () => (
-        <HelloWorld size="medium" />
-      );
-medium.story = {};
-medium.story.name = 'medium';
-medium.story.parameters = { storySource: { source: '<HelloWorld size="medium" />' } };
+          <HelloWorld size="medium" />
+        );
+medium.storyName = 'medium';
+medium.parameters = { storySource: { source: '<HelloWorld size=\"medium\" />' } };
 
 export const large = () => (
-        <HelloWorld size="large" />
-      );
-large.story = {};
-large.story.name = 'large';
-large.story.parameters = { storySource: { source: '<HelloWorld size="large" />' } };
+          <HelloWorld size="large" />
+        );
+large.storyName = 'large';
+large.parameters = { storySource: { source: '<HelloWorld size=\"large\" />' } };
 
 export const colorFf0000 = () => (
-        <HelloWorld color="#ff0000" />
-      );
-colorFf0000.story = {};
-colorFf0000.story.name = 'color:#ff0000';
-colorFf0000.story.parameters = { storySource: { source: '<HelloWorld color=\"#ff0000\" />' } };
+          <HelloWorld color="#ff0000" />
+        );
+colorFf0000.storyName = 'color:#ff0000';
+colorFf0000.parameters = { storySource: { source: '<HelloWorld color=\"#ff0000\" />' } };
 
 const componentMeta = { title: 'example/HelloWorld', includeStories: ["defaultStory","small","medium","large","colorFf0000"],  };
 
@@ -127,39 +122,44 @@ import HelloWorld from "~/components/HelloWorld";
 ;
 export const defaultStory: {
     (): JSX.Element;
-    story: Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>;
+    storyName?: string;
+    parameters?: { [key: string]: any };
+    decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
 } = () => (<HelloWorld />);
-defaultStory.story = {};
-defaultStory.story.name = "Default";
-defaultStory.story.parameters = { storySource: { source: "<HelloWorld />" } };
+defaultStory.storyName = "Default";
+defaultStory.parameters = { storySource: { source: "<HelloWorld />" } };
 export const small: {
     (): JSX.Element;
-    story: Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>;
+    storyName?: string;
+    parameters?: { [key: string]: any };
+    decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
 } = () => (<HelloWorld size="small"/>);
-small.story = {};
-small.story.name = "small";
-small.story.parameters = { storySource: { source: "<HelloWorld size=\\"small\\" />" } };
+small.storyName = "small";
+small.parameters = { storySource: { source: "<HelloWorld size=\\"small\\" />" } };
 export const medium: {
     (): JSX.Element;
-    story: Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>;
+    storyName?: string;
+    parameters?: { [key: string]: any };
+    decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
 } = () => (<HelloWorld size="medium"/>);
-medium.story = {};
-medium.story.name = "medium";
-medium.story.parameters = { storySource: { source: "<HelloWorld size=\\"medium\\" />" } };
+medium.storyName = "medium";
+medium.parameters = { storySource: { source: "<HelloWorld size=\\"medium\\" />" } };
 export const large: {
     (): JSX.Element;
-    story: Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>;
+    storyName?: string;
+    parameters?: { [key: string]: any };
+    decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
 } = () => (<HelloWorld size="large"/>);
-large.story = {};
-large.story.name = "large";
-large.story.parameters = { storySource: { source: "<HelloWorld size=\\"large\\" />" } };
+large.storyName = "large";
+large.parameters = { storySource: { source: "<HelloWorld size=\\"large\\" />" } };
 export const colorFf0000: {
     (): JSX.Element;
-    story: Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>;
+    storyName?: string;
+    parameters?: { [key: string]: any };
+    decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
 } = () => (<HelloWorld color="#ff0000"/>);
-colorFf0000.story = {};
-colorFf0000.story.name = "color:#ff0000";
-colorFf0000.story.parameters = { storySource: { source: "<HelloWorld color=\\"#ff0000\\" />" } };
+colorFf0000.storyName = "color:#ff0000";
+colorFf0000.parameters = { storySource: { source: "<HelloWorld color=\\"#ff0000\\" />" } };
 `;
 
     expect(transformAvailableTypeCheckingCode(beforeCode)).toEqual(afterCode);
