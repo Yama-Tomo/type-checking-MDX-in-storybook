@@ -90,7 +90,9 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
          * :after code
          * export const hogeStory: {
          *   (): JSX.Element;
-         *   story: Partial<{name: string, parameters: {[key: string]: any}, decorators: Array<(story: () => JSX.Element) => JSX.Element> }>
+         *   storyName?: string;
+         *   parameters?: { [key: string]: any };
+         *   decorators?: Array<(story: () => JSX.Element) => JSX.Element>;
          * } = () => <div>hoge</div>;
          *
          */
@@ -102,10 +104,24 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
           ),
           ts.createPropertySignature(
             undefined,
-            ts.createIdentifier('story'),
+            ts.createIdentifier('storyName'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
+            ts.createTypeReferenceNode('string', undefined),
+            undefined
+          ),
+          ts.createPropertySignature(
             undefined,
+            ts.createIdentifier('parameters'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
+            ts.createTypeReferenceNode('{ [key: string]: any }', undefined),
+            undefined
+          ),
+          ts.createPropertySignature(
+            undefined,
+            ts.createIdentifier('decorators'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
             ts.createTypeReferenceNode(
-              'Partial<{ name: string; parameters: {[key: string]: any}; decorators: Array<(story: () => JSX.Element) => JSX.Element>; }>',
+              'Array<(story: () => JSX.Element) => JSX.Element>',
               undefined
             ),
             undefined
