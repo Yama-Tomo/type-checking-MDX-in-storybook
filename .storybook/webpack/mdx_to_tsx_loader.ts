@@ -1,9 +1,9 @@
-import * as ts from 'typescript';
-import { loader } from 'webpack';
 import fs from 'fs';
 import path from 'path';
+import * as ts from 'typescript';
+import { loader } from 'webpack';
 
-export default function(this: loader.LoaderContext, resourceContent: string) {
+export default function (this: loader.LoaderContext, resourceContent: string) {
   const callback = this.async();
   const rootPath = this.rootContext;
   const relatePath = this.resourcePath.replace(rootPath, '');
@@ -57,20 +57,20 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
   const visit = (node: ts.Node): undefined | ts.Node => {
     if (ts.isImportDeclaration(node) && ts.isStringLiteral(node.moduleSpecifier)) {
       const moduleName = node.moduleSpecifier.text;
-      if (namesOfRemoveImportStatement.some(name => name === moduleName)) {
+      if (namesOfRemoveImportStatement.some((name) => name === moduleName)) {
         // remove import statement
         return undefined;
       }
     }
 
     if (ts.isVariableStatement(node)) {
-      const declarationVarNames = node.declarationList.declarations.map(dec =>
+      const declarationVarNames = node.declarationList.declarations.map((dec) =>
         (dec.name as ts.Identifier).escapedText.toString()
       );
 
       if (
-        declarationVarNames.some(varName =>
-          namesOfRemoveDeclareVarStatement.some(removeVarName => removeVarName === varName)
+        declarationVarNames.some((varName) =>
+          namesOfRemoveDeclareVarStatement.some((removeVarName) => removeVarName === varName)
         )
       ) {
         // remove variable declaration statement
@@ -78,7 +78,7 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
       }
 
       const isExportDeclaration =
-        node.modifiers && node.modifiers.some(mod => mod.kind === ts.SyntaxKind.ExportKeyword);
+        node.modifiers && node.modifiers.some((mod) => mod.kind === ts.SyntaxKind.ExportKeyword);
 
       if (isExportDeclaration) {
         /**
@@ -154,7 +154,7 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
 
       if (
         willAssignVariableName &&
-        namesOfRemoveDeclareVarStatement.find(varName => varName === willAssignVariableName)
+        namesOfRemoveDeclareVarStatement.find((varName) => varName === willAssignVariableName)
       ) {
         return undefined;
       }
@@ -162,7 +162,7 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
 
     if (
       ts.isFunctionDeclaration(node) &&
-      namesOfRemoveDeclareFuncStatement.some(name => name === node.name?.escapedText.toString())
+      namesOfRemoveDeclareFuncStatement.some((name) => name === node.name?.escapedText.toString())
     ) {
       return undefined;
     }
