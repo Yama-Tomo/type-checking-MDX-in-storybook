@@ -1,5 +1,8 @@
 name: Main workflow
-on: [push]
+on:
+  push:
+  repository_dispatch:
+    types: [test]
 jobs:
   test:
     name: test
