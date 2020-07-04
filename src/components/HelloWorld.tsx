@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StyledFC } from '~/types/styled-compnents';
 
 /* -------------------- DOM -------------------- */
 type Props = {
@@ -7,14 +8,14 @@ type Props = {
   color?: string;
 };
 
-const UiComponent: React.FCX<Props> = (props) => (
+const UiComponent: StyledFC<Props> = (props) => (
   <div className={props.className}>
     <span>hello world</span>
   </div>
 );
 
 /* ------------------- Style ------------------- */
-const StyledUiComponent: React.FCX<Props> = styled(UiComponent)`
+const StyledUiComponent: StyledFC<Props> = styled(UiComponent)`
   font-size: ${(props) => fontSize(props)};
   ${(props) => (props.color ? `color: ${props.color};` : '')}
 `;
@@ -32,4 +33,4 @@ const fontSize = (props: Props) => {
 };
 
 /*---------------------------------------------- */
-export default StyledUiComponent;
+export { StyledUiComponent as HelloWorld };
