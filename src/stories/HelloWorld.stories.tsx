@@ -1,5 +1,5 @@
 import React from 'react';
-import HelloWorld from '~/components/HelloWorld';
+import { HelloWorld } from '~/components/HelloWorld';
 
 export const Default = () => <HelloWorld />;
 export const small = () => <HelloWorld size="small" />;
