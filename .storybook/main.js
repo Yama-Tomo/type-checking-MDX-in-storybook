@@ -3,7 +3,7 @@ const displayErrorOnDevPlugin = require('./webpack/display_error_on_dev_plugin')
 const typeCheckingMdx = require('./webpack/type_checking_mdx')
 
 module.exports = {
-  stories: ['../src/stories/**/*.stories.(tsx|mdx)'],
+  stories: ['../src/stories/**/*.stories.@(tsx|mdx)'],
   addons: [
     '@storybook/preset-create-react-app',
     {
