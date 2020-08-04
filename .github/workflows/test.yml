@@ -7,3 +7,11 @@ jobs:
     steps:
       - name: hello
         run: echo 'test'
+      - name: test
+        env:
+          TEST: aaaaaaaaaaa
+          TEST_1: bbbbbbbbbbbbbb
+        run: |
+          env > .env
+          cat .env
+
