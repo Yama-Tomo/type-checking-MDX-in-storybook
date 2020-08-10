@@ -1775,7 +1775,7 @@
     jest-image-snapshot "^4.0.2"
     regenerator-runtime "^0.13.3"
 
-"@storybook/addon-storyshots@^6.0.0-rc.30":
+"@storybook/addon-storyshots@^6.0.0-rc":
   version "6.0.0-rc.30"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-6.0.0-rc.30.tgz#fa0f84f2917b4cc03d70126d8033b9e33c432d5b"
   integrity sha512-SSftOXYHy/Fl7G+D+tavD0I0paBavxV9tAiooAfwQHrEDSULjnck6zn8pfuZ67J7ytLR7CF9Sqd7YokYh2jmDQ==

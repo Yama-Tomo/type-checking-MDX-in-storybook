@@ -33,7 +33,7 @@
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "@storybook/addon-docs": "^6.0.0-rc.30",
-    "@storybook/addon-storyshots": "^6.0.0-rc.30",
+    "@storybook/addon-storyshots": "^6.0.0-rc",
     "@storybook/addon-storyshots-puppeteer": "^6.0.0-rc.30",
     "@storybook/addons": "^6.0.0-rc.30",
     "@storybook/cli": "^6.0.0-rc.30",
