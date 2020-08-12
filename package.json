@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.3",
     "styled-components": "^5.1.1"
   },
   "scripts": {
@@ -32,13 +32,13 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
-    "@storybook/addon-docs": "^6.0.0-rc.30",
-    "@storybook/addon-storyshots": "^6.0.0-rc.30",
-    "@storybook/addon-storyshots-puppeteer": "^6.0.0-rc.30",
-    "@storybook/addons": "^6.0.0-rc.30",
-    "@storybook/cli": "^6.0.0-rc.30",
+    "@storybook/addon-docs": "^6.0.5",
+    "@storybook/addon-storyshots": "^6.0.5",
+    "@storybook/addon-storyshots-puppeteer": "^6.0.5",
+    "@storybook/addons": "^6.0.5",
+    "@storybook/cli": "^6.0.5",
     "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.0-rc.30",
+    "@storybook/react": "^6.0.5",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.2",
     "eslint-config-prettier": "^6.11.0",
