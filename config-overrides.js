@@ -16,6 +16,7 @@ module.exports = {
   },
   jest: function (config) {
     config.moduleNameMapper['^~/(.*)$'] = '<rootDir>/src/$1'
+    config.moduleFileExtensions = [...config.moduleFileExtensions, 'd.ts']
     config.transform = { '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx', ...config.transform }
 
     return config
