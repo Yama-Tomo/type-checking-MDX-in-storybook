@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+
 import * as ts from 'typescript';
 import { loader } from 'webpack';
 
@@ -96,38 +97,37 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
          * } = () => <div>hoge</div>;
          *
          */
-        const type = context.factory.createTypeLiteralNode(            [
-              ts.createCallSignature(
-                undefined,
-                [],
-                ts.createTypeReferenceNode('JSX.Element', undefined)
-              ),
-              ts.createPropertySignature(
-                undefined,
-                ts.createIdentifier('storyName'),
-                ts.createToken(ts.SyntaxKind.QuestionToken),
-                ts.createTypeReferenceNode('string', undefined),
-                undefined
-              ),
-              ts.createPropertySignature(
-                undefined,
-                ts.createIdentifier('parameters'),
-                ts.createToken(ts.SyntaxKind.QuestionToken),
-                ts.createTypeReferenceNode('{ [key: string]: any }', undefined),
-                undefined
-              ),
-              ts.createPropertySignature(
-                undefined,
-                ts.createIdentifier('decorators'),
-                ts.createToken(ts.SyntaxKind.QuestionToken),
-                ts.createTypeReferenceNode(
-                  'Array<(story: () => JSX.Element) => JSX.Element>',
-                  undefined
-                ),
-                undefined
-              ),
-            ]
-);
+        const type = context.factory.createTypeLiteralNode([
+          ts.createCallSignature(
+            undefined,
+            [],
+            ts.createTypeReferenceNode('JSX.Element', undefined)
+          ),
+          ts.createPropertySignature(
+            undefined,
+            ts.createIdentifier('storyName'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
+            ts.createTypeReferenceNode('string', undefined),
+            undefined
+          ),
+          ts.createPropertySignature(
+            undefined,
+            ts.createIdentifier('parameters'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
+            ts.createTypeReferenceNode('{ [key: string]: any }', undefined),
+            undefined
+          ),
+          ts.createPropertySignature(
+            undefined,
+            ts.createIdentifier('decorators'),
+            ts.createToken(ts.SyntaxKind.QuestionToken),
+            ts.createTypeReferenceNode(
+              'Array<(story: () => JSX.Element) => JSX.Element>',
+              undefined
+            ),
+            undefined
+          ),
+        ]);
         const [oldVariableDeclaration, ...rest] = node.declarationList.declarations;
         const newVariableDeclaration = context.factory.updateVariableDeclaration(
           oldVariableDeclaration,
@@ -137,8 +137,11 @@ const transformAvailableTypeCheckingNode = <T extends ts.Node>(
           oldVariableDeclaration.initializer
         );
 
-        const declarationList = context.factory.updateVariableDeclarationList(node.declarationList, [newVariableDeclaration, ...rest])
-        const newNode: ts.VariableStatement= {...node, declarationList };
+        const declarationList = context.factory.updateVariableDeclarationList(
+          node.declarationList,
+          [newVariableDeclaration, ...rest]
+        );
+        const newNode: ts.VariableStatement = { ...node, declarationList };
 
         return newNode;
       }

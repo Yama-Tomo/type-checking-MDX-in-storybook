@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
 import { HelloWorld } from '~/components/HelloWorld';
 import { StyledFC } from '~/types/styled-compnents';
+import React from 'react';
+import styled from 'styled-components';
 
 /* -------------------- DOM -------------------- */
 const UiComponent: StyledFC = (props) => (
