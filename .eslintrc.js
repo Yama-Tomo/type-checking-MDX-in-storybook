@@ -1,30 +1,13 @@
 module.exports = {
   root: true,
-  plugins: [
-    'react',
-    'prettier'
-  ],
   extends: [
     'react-app',
-    'plugin:prettier/recommended'
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
   ],
-  rules: {  
-    'comma-dangle': ['error', {
-      'arrays': 'always-multiline',
-      'exports': 'always-multiline',
-      'imports': 'always-multiline',
-      'objects': 'always-multiline',
-      'functions': 'never',
-    }],
-    '@typescript-eslint/no-explicit-any': 'error',  
-    'import/order': 'error',
-    'prettier/prettier': [
-      'error',
-      {
-        'singleQuote': true,
-        'trailingComma': 'es5',
-        'printWidth': 100,
-      }
-    ]
-  }
-}
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+  },
+};

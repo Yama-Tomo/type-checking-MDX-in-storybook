@@ -1,6 +1,6 @@
+import { StyledFC } from '~/types/styled-compnents';
 import React from 'react';
 import styled from 'styled-components';
-import { StyledFC } from '~/types/styled-compnents';
 
 /* -------------------- DOM -------------------- */
 type Props = {

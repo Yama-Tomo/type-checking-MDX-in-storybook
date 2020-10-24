@@ -1,12 +1,14 @@
-import React from 'react';
 import { HelloWorld } from '~/components/HelloWorld';
+import React from 'react';
 
-export const Default = () => <HelloWorld />;
-export const small = () => <HelloWorld size="small" />;
-export const medium = () => <HelloWorld size="medium" />;
-export const large = () => <HelloWorld size="large" />;
+export const Default: React.FC = () => <HelloWorld />;
+export const small: React.FC = () => <HelloWorld size="small" />;
+export const medium: React.FC = () => <HelloWorld size="medium" />;
+export const large: React.FC = () => <HelloWorld size="large" />;
 
-export const colorRed = () => <HelloWorld color="red" />;
+export const colorRed: React.FC & { storyName: string } = () => <HelloWorld color="red" />;
 colorRed.storyName = 'color:#ff0000';
 
-export default { title: 'example/HelloWorld-CSF' };
+const metaData = { title: 'example/HelloWorld-CSF' };
+
+export default metaData;

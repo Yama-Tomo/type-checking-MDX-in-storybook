@@ -5,6 +5,11 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - uses: actions/checkout@v2.0.0
       - uses: actions/cache@v1.0.3
         with:
