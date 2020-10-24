@@ -1,35 +1,42 @@
-const path = require('path')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-
-const isDev = process.env.NODE_ENV == 'development'
+const path = require('path');
 
 module.exports = {
   webpack: function (config, env) {
-    config.module.rules[2].oneOf.forEach(rule => {
-      if (rule.test) {
-        const tests = Array.isArray(rule.test) ? rule.test : [rule.test]
+    const forkTsCheckerWebpackPlugin = config.plugins.find(
+      (plugin) => plugin.constructor.name == 'ForkTsCheckerWebpackPlugin'
+    );
 
-        if (tests.some(t => t.test('.tsx')) && isDev) {
-          rule.options.plugins.push(require.resolve('react-refresh/babel'))
-        }
-      }
-    })
-
-
-    if (isDev) {
-      config.plugins.push(new ReactRefreshWebpackPlugin())
+    if (forkTsCheckerWebpackPlugin) {
+      forkTsCheckerWebpackPlugin.tsconfig = path.resolve('./tsconfig.json');
     }
 
     // enable alias import
-    config.resolve.alias['~'] = path.resolve('./src')
+    config.resolve.alias['~'] = path.resolve('./src');
 
-    return config
+    return config;
   },
   jest: function (config) {
-    config.moduleNameMapper['^~/(.*)$'] = '<rootDir>/src/$1'
-    config.moduleFileExtensions = [...config.moduleFileExtensions, 'd.ts']
-    config.transform = { '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx', ...config.transform }
+    config.moduleNameMapper['^~/(.*)$'] = '<rootDir>/src/$1';
+    config.moduleFileExtensions = [...config.moduleFileExtensions, 'd.ts'];
+    config.transform = {
+      '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
+      ...config.transform,
+    };
 
-    return config
-  }
-}
+    return config;
+  },
+  paths: (paths, env) => {
+    const overridePaths = {
+      ...paths,
+      appTsConfig: path.resolve('./tsconfig-react-scripts-v4.json'),
+    };
+
+    if (env === 'test') {
+      const pathsConfigPath = path.resolve('node_modules/react-scripts/config/paths.js');
+      // override paths in memory
+      require.cache[require.resolve(pathsConfigPath)].exports = overridePaths;
+    }
+
+    return overridePaths;
+  },
+};
