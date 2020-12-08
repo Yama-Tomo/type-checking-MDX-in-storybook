@@ -69,6 +69,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: snapshot
+          path: snapshot
       - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
