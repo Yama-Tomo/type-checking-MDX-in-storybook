@@ -54,7 +54,7 @@
     "typescript": "^4.2.2"
   },
   "resolutions": {
-    "babel-loader": "8.2.2"
+    "babel-loader": "8.1.0"
   },
   "importSort": {
     ".js, .jsx, .ts, .tsx": {
