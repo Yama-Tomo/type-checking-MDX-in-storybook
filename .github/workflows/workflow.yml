@@ -19,7 +19,7 @@ jobs:
             node_modules-
       - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
       - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
