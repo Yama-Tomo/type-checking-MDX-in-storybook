@@ -5,6 +5,7 @@
     ":semanticCommitTypeAll(chore)"
   ],
   "rangeStrategy": "bump",
+  "ignoreDeps": ["babel-loader"],
   "timezone": "Asia/Tokyo",
   "labels": ["renovate"],
   "lockFileMaintenance": {
