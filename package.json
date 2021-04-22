@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "@yamatomo/npatches": "https://github.com/Yama-Tomo/npatches#v1.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -34,17 +34,17 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^6.1.20",
-    "@storybook/addon-storyshots": "^6.1.20",
-    "@storybook/addon-storyshots-puppeteer": "^6.1.20",
-    "@storybook/addons": "^6.1.20",
-    "@storybook/cli": "^6.1.20",
-    "@storybook/preset-create-react-app": "^3.1.6",
-    "@storybook/react": "^6.1.20",
-    "@types/react-dom": "^17.0.1",
-    "@types/styled-components": "^5.1.7",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "@storybook/addon-docs": "^6.2.8",
+    "@storybook/addon-storyshots": "^6.2.8",
+    "@storybook/addon-storyshots-puppeteer": "^6.2.8",
+    "@storybook/addons": "^6.2.8",
+    "@storybook/cli": "^6.2.8",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.8",
+    "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "import-sort-style-module": "^6.0.0",
     "patch-package": "^6.4.7",
@@ -53,8 +53,8 @@
     "puppeteer": "^8.0.0",
     "react-app-rewired": "^2.1.8",
     "react-scripts": "^4.0.3",
-    "react-test-renderer": "^17.0.1",
-    "typescript": "^4.2.2"
+    "react-test-renderer": "^17.0.2",
+    "typescript": "^4.2.4"
   },
   "importSort": {
     ".js, .jsx, .ts, .tsx": {
