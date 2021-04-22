@@ -1800,7 +1800,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-docs@^6.1.20":
+"@storybook/addon-docs@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-6.2.8.tgz#b5d039ad04805eceb99dbbb60a45c6d49096f0c3"
   integrity sha512-IWnb10ImrzRMT2qw9785p3wYEI6U9gjsg6H2zKcRJQP5dEboqeX3OFjUKfXkaIWii4nz8MtJjBg5t4BdEYqLdw==
@@ -1848,7 +1848,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-storyshots-puppeteer@^6.1.20":
+"@storybook/addon-storyshots-puppeteer@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots-puppeteer/-/addon-storyshots-puppeteer-6.2.8.tgz#3aa1e87675c8601addfdd16eb00099c566b20ee7"
   integrity sha512-PdHXrH7tw7p27WdmPfbcw9Iq0s+ssNQKv5l5qIRYcKD7eiui9wri8WQxtr1Ve+fUbabMzUX2SNyXTRXA1fUdAg==
@@ -1861,7 +1861,7 @@
     jest-image-snapshot "^4.3.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-storyshots@^6.1.20":
+"@storybook/addon-storyshots@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-6.2.8.tgz#fbcf52b44eda4b17b07bfb0b1ab44c7b06606335"
   integrity sha512-yz225tPw8DwKCEh+q8jt7tg9F8MN4Vber0jaQWIQ+QFfXz6YNaj59WNig4H8vrDsrsFAKlvix9pt+UWENyvU1A==
@@ -1885,7 +1885,7 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addons@6.2.8", "@storybook/addons@^6.1.20":
+"@storybook/addons@6.2.8", "@storybook/addons@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.2.8.tgz#31d9bbd2e8b212490065a25e587621dab83ae392"
   integrity sha512-zbavtYi66HAtgAROw5h4mR3mD9239ocCaYiasRanM+qyprguIvADPMGzgOA7COVfNI9MiIkxSA+E9oZ1y5PKfQ==
@@ -2024,7 +2024,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@^6.1.20":
+"@storybook/cli@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.2.8.tgz#0ef8c875e0b2f13cdc81b70bb319eeb60bfb5d36"
   integrity sha512-RRpFrIdPjHfW1E1eZXkyJGY1sNdg/jIU1MfhE9w9BD1NrGMQB3LXC0KOpGEP4OIHLfUrEE5l+SuyF+6yq0fRRA==
@@ -2309,7 +2309,7 @@
   dependencies:
     core-js "^3.8.2"
 
-"@storybook/preset-create-react-app@^3.1.6":
+"@storybook/preset-create-react-app@^3.1.7":
   version "3.1.7"
   resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-3.1.7.tgz#e48df77768bdcc4863e3918c11965c45e4110ac8"
   integrity sha512-SR+HGSWCrhHA5sszuIHJYdh2tWNi/zu858WB5RM74OBW4ogo8Bv4/7td4p53eWbdm0zBDbnKcrBmwRrAYqwL9Q==
@@ -2322,7 +2322,7 @@
     react-docgen-typescript-plugin "^0.6.2"
     semver "^7.3.2"
 
-"@storybook/react@^6.1.20":
+"@storybook/react@^6.2.8":
   version "6.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.2.8.tgz#7b3fb79f30a696856e8bb98b2dc6a2b3a48cbdba"
   integrity sha512-n8nQmuclm+KvwOKWpZfTFeeUWISZuEUcHQc6MGoi0fzXDnJDPSk4KI6kvIMlr1kSDh41+iZfbbBTil+XWORaRA==
@@ -2841,7 +2841,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@^17.0.1":
+"@types/react-dom@^17.0.3":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.3.tgz#7fdf37b8af9d6d40127137865bb3fff8871d7ee1"
   integrity sha512-4NnJbCeWE+8YBzupn/YrJxZ8VnjcJq5iR1laqQ1vkpQgBiA7bwk0Rp24fxsdNinzJY2U+HHS4dJJDPdoMjdJ7w==
@@ -2886,7 +2886,7 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
-"@types/styled-components@^5.1.7":
+"@types/styled-components@^5.1.9":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.9.tgz#00d3d84b501420521c4db727e3c195459f87a6cf"
   integrity sha512-kbEG6YlwK8rucITpKEr6pA4Ho9KSQHUUOzZ9lY3va1mtcjvS3D0wDciFyHEiNHKLL/npZCKDQJqm0x44sPO9oA==
@@ -6209,7 +6209,7 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^8.1.0:
+eslint-config-prettier@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.2.0.tgz#78de77d63bca8e9e59dae75a614b5299925bb7b3"
   integrity sha512-dWV9EVeSo2qodOPi1iBYU/x6F6diHv8uujxbxr77xExs3zTAlNXvVZKiyLsQGNz7yPV2K49JY5WjPzNIuDc2Bw==
@@ -6288,7 +6288,7 @@ eslint-plugin-jsx-a11y@^6.3.1:
     jsx-ast-utils "^3.1.0"
     language-tags "^1.0.5"
 
-eslint-plugin-prettier@^3.3.1:
+eslint-plugin-prettier@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.0.tgz#cdbad3bf1dbd2b177e9825737fe63b476a08f0c7"
   integrity sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==
@@ -12157,7 +12157,7 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@^17.0.1:
+react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -12335,7 +12335,7 @@ react-syntax-highlighter@^13.5.3:
     prismjs "^1.21.0"
     refractor "^3.1.0"
 
-"react-test-renderer@^16.8.0 || ^17.0.0", react-test-renderer@^17.0.1:
+"react-test-renderer@^16.8.0 || ^17.0.0", react-test-renderer@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-17.0.2.tgz#4cd4ae5ef1ad5670fc0ef776e8cc7e1231d9866c"
   integrity sha512-yaQ9cB89c17PUb0x6UfWRs7kQCorVdHlutU1boVPEsB8IDZH6n9tHxMacc3y0JoXOJUsZb/t/Mb8FUWMKaM7iQ==
@@ -12354,7 +12354,7 @@ react-textarea-autosize@^8.3.0:
     use-composed-ref "^1.0.0"
     use-latest "^1.0.0"
 
-react@^17.0.1:
+react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
@@ -13830,7 +13830,7 @@ style-to-object@0.3.0, style-to-object@^0.3.0:
   dependencies:
     inline-style-parser "0.1.1"
 
-styled-components@^5.2.1:
+styled-components@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.2.3.tgz#752669fd694aac10de814d96efc287dde0d11385"
   integrity sha512-BlR+KrLW3NL1yhvEB+9Nu9Dt51CuOnHoxd+Hj+rYPdtyR8X11uIW9rvhpy3Dk4dXXBsiW1u5U78f00Lf/afGoA==
@@ -14402,7 +14402,7 @@ typescript@^3.2.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.9.tgz#e69905c54bc0681d0518bd4d587cc6f2d0b1a674"
   integrity sha512-kdMjTiekY+z/ubJCATUPlRDl39vXYiMV9iyeMuEuXZh2we6zz80uovNN2WlAxmmdE/Z/YQe+EbOEXB5RHEED3w==
 
-typescript@^4.2.2:
+typescript@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
   integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
