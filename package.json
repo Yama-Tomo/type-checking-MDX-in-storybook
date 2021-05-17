@@ -6,7 +6,7 @@
     "@yamatomo/npatches": "https://github.com/Yama-Tomo/npatches#v1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -41,16 +41,16 @@
     "@storybook/cli": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
-    "@types/react-dom": "^17.0.3",
+    "@types/react-dom": "^17.0.5",
     "@types/styled-components": "^5.1.9",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "import-sort-style-module": "^6.0.0",
     "patch-package": "^6.4.7",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "prettier-plugin-import-sort": "^0.0.6",
-    "puppeteer": "^9.0.0",
+    "puppeteer": "^9.1.1",
     "react-app-rewired": "^2.1.8",
     "react-scripts": "^4.0.3",
     "react-test-renderer": "^17.0.2",
