@@ -1,15 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  webpack: function (config, env) {
-    const forkTsCheckerWebpackPlugin = config.plugins.find(
-      (plugin) => plugin.constructor.name == 'ForkTsCheckerWebpackPlugin'
-    );
-
-    if (forkTsCheckerWebpackPlugin) {
-      forkTsCheckerWebpackPlugin.tsconfig = path.resolve('./tsconfig.json');
-    }
-
+  webpack: function (config) {
     // enable alias import
     config.resolve.alias['~'] = path.resolve('./src');
 
@@ -26,10 +18,7 @@ module.exports = {
     return config;
   },
   paths: (paths, env) => {
-    const overridePaths = {
-      ...paths,
-      appTsConfig: path.resolve('./tsconfig-react-scripts-v4.json'),
-    };
+    const overridePaths = { ...paths };
 
     if (env === 'test') {
       const pathsConfigPath = path.resolve('node_modules/react-scripts/config/paths.js');
