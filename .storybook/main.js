@@ -39,14 +39,17 @@ module.exports = {
       ];
     }
 
-    typeCheckingMdx(config, { delay: isDev ? 1500 : 5000, isDev });
+    typeCheckingMdx(config, { delay: isDev ? 1500 : 5000 });
 
     if (isDev) {
-      config.plugins.push(
-        displayErrorOnDevPlugin({ formatter: typeCheckingMdx.stripTsxFilenameFormatter })
-      );
+      displayErrorOnDevPlugin(config, {
+        forkTsCheckerIssueFormatter: typeCheckingMdx.forkTsCheckerIssueFormatter,
+      });
     }
 
     return config;
+  },
+  core: {
+    builder: 'webpack5',
   },
 };

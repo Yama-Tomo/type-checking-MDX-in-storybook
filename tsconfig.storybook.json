@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": [
-    "src",
-    ".storybook/.mdx_to_tsx/**/*.tsx"
-  ]
-}

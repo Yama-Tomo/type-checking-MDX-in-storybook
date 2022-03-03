@@ -1,26 +1,29 @@
+const { dependRequire } = require('./depend_require');
 const rimraf = require('rimraf');
 const fs = require('fs');
 const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
-const displayErrorOnDevPlugin = require('./display_error_on_dev_plugin');
+const ForkTsCheckerWebpackPlugin = dependRequire('react-dev-utils/ForkTsCheckerWebpackPlugin');
 
 const delayTypeCheckingPlugin = function (options /*: { delay?: number } */) {
   return function () {
-    ForkTsCheckerWebpackPlugin.getCompilerHooks(this).serviceBeforeStart.tapAsync(
+    ForkTsCheckerWebpackPlugin.getCompilerHooks(this).start.tapPromise(
       'delay-check-starting',
-      (cb) => {
-        setTimeout(() => {
-          cb();
-        }, options.delay || 5000);
-      }
+      () => new Promise((r) => setTimeout(r, options.delay || 5000))
     );
   };
 };
 
-const stripTsxFilenameFormatter = (message) =>
-  displayErrorOnDevPlugin
-    .formatter(message)
-    .replace(/(.*)\.storybook\/\.mdx_to_tsx\/(.*?)\.tsx/g, '$1$2');
+const appendMDXFilePathFormatter = (issue) => {
+  if (!issue.file.includes('.storybook/.mdx_to_tsx')) {
+    return issue;
+  }
+
+  const originalFileName = issue.file.replace(/(.*)\.storybook\/\.mdx_to_tsx\/(.*?)\.tsx/g, '$1$2');
+  return {
+    ...issue,
+    message: `${issue.message}\n\noriginal file Path: ${originalFileName}\n`,
+  };
+};
 
 module.exports = function (webpackConfig, options /*: { delay?: number } */) {
   if (fs.existsSync('.storybook/.mdx_to_tsx')) {
@@ -50,15 +53,11 @@ module.exports = function (webpackConfig, options /*: { delay?: number } */) {
   const forkTsCheckerWebpackPlugin = webpackConfig.plugins.find(
     (p) => p.constructor.name === 'ForkTsCheckerWebpackPlugin'
   );
-  const currentOptions = forkTsCheckerWebpackPlugin.options;
 
   // add .storybook/.mdx_to_tsx files to type checking
-  currentOptions.reportFiles = ['.storybook/.mdx_to_tsx/**/*.tsx', ...currentOptions.reportFiles];
-  currentOptions.tsconfig = './tsconfig.storybook.json';
-
-  if (!options.isDev) {
-    currentOptions.formatter = (message) => stripTsxFilenameFormatter(message);
-  }
+  const currentOptions = forkTsCheckerWebpackPlugin.options;
+  currentOptions.issue.include.push({ file: '.storybook/.mdx_to_tsx/**/*.tsx' });
+  currentOptions.typescript.configOverwrite.include = ['src', '.storybook/.mdx_to_tsx/**/*.tsx'];
 
   // replace new `ForkTsCheckerWebpackPlugin` instance
   webpackConfig.plugins = webpackConfig.plugins
@@ -68,4 +67,4 @@ module.exports = function (webpackConfig, options /*: { delay?: number } */) {
   webpackConfig.plugins.push(delayTypeCheckingPlugin(options));
 };
 
-module.exports.stripTsxFilenameFormatter = stripTsxFilenameFormatter;
+module.exports.forkTsCheckerIssueFormatter = appendMDXFilePathFormatter;

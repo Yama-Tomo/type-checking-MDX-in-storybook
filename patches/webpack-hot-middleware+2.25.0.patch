@@ -1,0 +1,13 @@
+diff --git a/node_modules/webpack-hot-middleware/middleware.js b/node_modules/webpack-hot-middleware/middleware.js
+index 79a92f4..df7b7c3 100644
+--- a/node_modules/webpack-hot-middleware/middleware.js
++++ b/node_modules/webpack-hot-middleware/middleware.js
+@@ -55,6 +55,8 @@ function webpackHotMiddleware(compiler, opts) {
+     eventStream.close();
+     eventStream = null;
+   };
++
++  compiler.notifyStatsToBrowser = (stats) => publishStats('built', stats, eventStream, false);
+   return middleware;
+ }
+ 
