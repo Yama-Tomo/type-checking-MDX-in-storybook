@@ -17,7 +17,7 @@ jobs:
           key: node_modules-v2-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             node_modules-v2-
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
       - name: configure AWS credentials
