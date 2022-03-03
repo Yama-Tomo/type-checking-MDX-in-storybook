@@ -42,9 +42,9 @@ module.exports = {
     typeCheckingMdx(config, { delay: isDev ? 1500 : 5000, isDev });
 
     if (isDev) {
-      config.plugins.push(
-        displayErrorOnDevPlugin({ formatter: typeCheckingMdx.stripTsxFilenameFormatter })
-      );
+      displayErrorOnDevPlugin(config, {
+        forkTsCheckerIssueFormatter: typeCheckingMdx.forkTsCheckerIssueFormatter,
+      });
     }
 
     return config;

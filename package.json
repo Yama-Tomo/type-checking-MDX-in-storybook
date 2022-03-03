@@ -65,5 +65,8 @@
       "style": "module",
       "parser": "typescript"
     }
+  },
+  "resolutions": {
+    "webpack-hot-middleware": "lukeapage/webpack-hot-middleware#master"
   }
 }
