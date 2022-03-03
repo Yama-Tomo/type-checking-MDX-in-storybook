@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 import * as ts from 'typescript';
-import { loader } from 'webpack';
+import { LoaderContext } from 'webpack';
 
-export default function (this: loader.LoaderContext, resourceContent: string) {
+export default function (this: LoaderContext<unknown>, resourceContent: string) {
   const callback = this.async();
   const rootPath = this.rootContext;
   const relatePath = this.resourcePath.replace(rootPath, '');

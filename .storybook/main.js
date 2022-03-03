@@ -39,7 +39,7 @@ module.exports = {
       ];
     }
 
-    typeCheckingMdx(config, { delay: isDev ? 1500 : 5000, isDev });
+    typeCheckingMdx(config, { delay: isDev ? 1500 : 5000 });
 
     if (isDev) {
       displayErrorOnDevPlugin(config, {
