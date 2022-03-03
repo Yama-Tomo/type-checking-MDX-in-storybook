@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./",
+    "noEmit": false
+  },
+  "include": [
+    "mdx_to_tsx_loader.ts"
+  ],
+  "exclude": []
+}
