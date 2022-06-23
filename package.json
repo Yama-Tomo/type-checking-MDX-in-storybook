@@ -53,7 +53,7 @@
     "postcss-normalize": "^10.0.1",
     "prettier": "^2.6.2",
     "prettier-plugin-import-sort": "^0.0.7",
-    "puppeteer": "^13.5.2",
+    "puppeteer": "^15.0.0",
     "react-app-rewired": "^2.2.1",
     "react-scripts": "^5.0.0",
     "react-test-renderer": "^18.0.0",
