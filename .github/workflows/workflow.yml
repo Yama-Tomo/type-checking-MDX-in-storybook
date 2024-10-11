@@ -10,8 +10,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - uses: actions/checkout@v3.0.0
-      - uses: actions/cache@v2.1.7
+      - uses: actions/checkout@v3.6.0
+      - uses: actions/cache@v2.1.8
         with:
           path: node_modules
           key: node_modules-v2-${{ hashFiles('yarn.lock') }}
