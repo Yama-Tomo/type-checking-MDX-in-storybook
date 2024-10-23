@@ -10,7 +10,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - uses: actions/checkout@v3.0.0
+      - uses: actions/checkout@v4.2.2
       - uses: actions/cache@v2.1.7
         with:
           path: node_modules
